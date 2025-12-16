@@ -11,6 +11,10 @@ app.use(express.json());
 
 connectDB();
 
+app.get("/health-check", (req, res) => {
+  res.send("API is running...");
+});
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
 });
